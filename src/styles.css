@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    background-image: url('/src/assets/imgs/background.jpg');
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    font-size: 1.8rem;
+    line-height: 160%;
+    font-weight: 300;
+}

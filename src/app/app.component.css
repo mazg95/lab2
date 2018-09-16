@@ -1,16 +1,6 @@
 header{
     text-align: center;
 }
-body {
-    margin: 0;
-    padding: 0;
-    color: #000;
-    background-color: #000000;
-    font-family: Raleway, Helvetica, Arial, sans-serif;
-    font-size: 1.8rem;
-    line-height: 160%;
-    font-weight: 300;
-}
 
 .navbar {
     text-align: center;
@@ -32,3 +22,4 @@ body {
 img{
     margin: auto;
 }
+

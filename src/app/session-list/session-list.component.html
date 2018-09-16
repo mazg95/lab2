@@ -1,0 +1,6 @@
+<section class="col-xs-offset-2 col-xs-8 sessions">
+    <app-session
+        *ngFor="let session of sessions"
+        [session]="session"
+        (delete)="onSessionDelete($event)"></app-session>
+</section>
