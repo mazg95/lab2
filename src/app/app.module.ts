@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }    from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { MetricComponent } from './metric/metric.component';
@@ -8,6 +9,8 @@ import { MealComponent } from './meal/meal.component';
 import { SessionListComponent } from './session-list/session-list.component';
 import { MealListComponent } from './meal-list/meal-list.component';
 import { MetricListComponent } from './metric-list/metric-list.component';
+
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,8 @@ import { MetricListComponent } from './metric-list/metric-list.component';
     MetricListComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
