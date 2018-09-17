@@ -1,6 +1,6 @@
 import { Session } from './session';
 
-export const sessions: Session[] = [
+export const Sessions: Session[] = [
     {
         id:1,
         date_done: '2018-08-15',

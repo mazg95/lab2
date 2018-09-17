@@ -10,18 +10,13 @@
                 <a class="navbar-brand" href="#"> {{ title }}</a>
               </div>
             <ul class="nav navbar-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#history">Trainnings</a></li>
-                <li><a href="#products">Food</a></li>
+                <li><a routerLink="/metrics">Metrics</a></li>
+                <li><a routerLink="/sessions">Trainnings</a></li>
+                <li><a routerLink="/meals">Food</a></li>
             </ul><!-- navbar -->
 
         </div>
     </div>
   </nav>
 </header>
-<div class="principal">
-  <app-meal-list></app-meal-list>
-  <app-metric-list></app-metric-list>
-  <app-session-list></app-session-list>
-</div>
-
+<router-outlet></router-outlet>
