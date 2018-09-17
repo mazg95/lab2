@@ -3,12 +3,12 @@
   <div class="row session">
     <h4 class="list-group-item-heading col-xs-8">Calories {{session.calories}} / FC: {{session.fc}}</h4>
     <div class="tools col-xs-4">
-        <a href="#">
+        <a routerLink="/detail/{{session.id}}">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
-        <a href="#">
+        <a>
             <span class="glyphicon glyphicon-remove"></span>
-          </a>
+        </a>
     </div>
     <p class="list-group-item-text col-xs-12">Date: {{session.date_done | date}} / Duration {{session.duration}}  </p>
   </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MetricService } from '../metric.service';
+import { Metric } from '../metric'
 
 @Component({
   selector: 'app-metric-list',
@@ -7,25 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MetricListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private metricService: MetricService) { }
 
   ngOnInit() {
+    this.getMetrics();
   }
-  metrics = [
-    {
-        "goal": 150,
-        "actual": 110,
-        "title": 'Minutes Effort'
-    },
-    {
-        "goal": 10000,
-        "actual": 7500,
-        "title": 'Steps'
-    },
-    {
-        "goal": 20,
-        "actual":10,
-        "title": 'Floors'
-    }
-  ];
+
+  metrics : Metric[];
+
+  getMetrics():void{
+    this.metricService.getMetrics()
+      .subscribe(metrics => this.metrics = metrics);
+  }
 }

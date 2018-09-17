@@ -2,6 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }    from '@angular/forms';
 
+import { StorageServiceModule} from 'angular-webstorage-service';
+
+
 import { AppComponent } from './app.component';
 import { MetricComponent } from './metric/metric.component';
 import { SessionComponent } from './session/session.component';
@@ -11,6 +14,7 @@ import { MealListComponent } from './meal-list/meal-list.component';
 import { MetricListComponent } from './metric-list/metric-list.component';
 
 import { AppRoutingModule } from './/app-routing.module';
+import { SessionFormComponent } from './session-form/session-form.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +24,14 @@ import { AppRoutingModule } from './/app-routing.module';
     MealComponent,
     SessionListComponent,
     MealListComponent,
-    MetricListComponent
+    MetricListComponent,
+    SessionFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    StorageServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
