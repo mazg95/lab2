@@ -55,7 +55,7 @@ export class SessionService {
     let sessions = this.storage.get('sessions')|| [];
     console.log(`Servicio ${session_id}`);
     console.log(sessions);
-    let index = sessions.indexOf(s => (s.id === session_id));
+    let index = sessions.findIndex(s => (s.id == session_id));
     console.log(index);
     if(index<0){
       return false;
