@@ -11,26 +11,53 @@ import { Observable, of } from 'rxjs';
 export class SessionService {
 ;
   constructor(@Inject(LOCAL_STORAGE) private storage: WebStorageService) {
-      
+      if(!storage.get('sessions')){
+        storage.set('sessions', Sessions);
+      }
   }
 
   getSessions() : Observable<Session[]>{
-    return of(Sessions);
+    return of(this.storage.get('sessions'));
   }
 
   getSession(id:number): Observable<Session>{
-    return of(Sessions.find(s => s.id === id));
+    return of(this.storage.get('sessions').find(s => s.id === id));
   }
 
   newSession(session:Session): number {
-    return Sessions.length;
-  }
-
-  saveSession(session:Session): number{
+    //get array of session from local storage
+    let sessions = this.storage.get('sessions') || [];
+    console.log(sessions.length);
+    session.id = sessions[sessions.length - 1].id + 1
+    // push new sessions to array
+    sessions.push(session);
+    // insert updated array to local storage
+    this.storage.set('sessions', sessions);
+    console.log(this.storage.get('sessions') || 'LocaL storage is empty');
     return session.id;
   }
 
-  removeSession(session:Session): boolean{
-    return false;
+  saveSession(session:Session): number{
+    //get array of session from local storage
+    let sessions = this.storage.get('sessions') || [];
+    
+    let index = sessions.indexOf(s => s.id == session.id);
+
+    // push new session to array
+    sessions.splice(index, 1, session);
+    // insert updated array to local storage
+    this.storage.set('sessions', sessions);
+    console.log(this.storage.get('sessions') || 'LocaL storage is empty');
+    return session.id;
+  }
+
+  removeSession(session_id:number): boolean{
+    let sessions = this.storage.get('sessions')|| [];
+    let index = sessions.indexOf(s => s.id == session_id);
+    if(!index){
+      return false;
+    }
+    sessions.splice(index,1);
+    return true;
   }
 }

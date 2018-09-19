@@ -37,13 +37,14 @@ export class SessionFormComponent implements OnInit {
     }
   }
 
-  saveSession(): number {
+  saveSession(){
     if(this.isNew){
-      return this.sessionService.newSession(this.session);
+      this.sessionService.newSession(this.session);
     }
     else {
-      return this.sessionService.saveSession(this.session);
+      this.sessionService.saveSession(this.session);
     }
+    this.goBack();
   }
  
   goBack(): void {
