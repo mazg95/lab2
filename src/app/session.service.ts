@@ -58,6 +58,7 @@ export class SessionService {
       return false;
     }
     sessions.splice(index,1);
+    this.storage.set('sessions',sessions);
     return true;
   }
 }

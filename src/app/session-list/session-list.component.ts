@@ -18,7 +18,9 @@ export class SessionListComponent implements OnInit {
 
 
   onSessionDelete(session){
-
+    console.log(session.id);
+    this.sessionService.removeSession(session.id);
+    this.getSessions();
   }
 
   sessions: Session[];

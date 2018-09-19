@@ -15,7 +15,9 @@ export class SessionComponent implements OnInit {
   ngOnInit() {
   }
 
-  
+  removeItem(){
+    this.confirmedDelete();
+  }
   confirmedDelete() {
    this.delete.emit(this.session);
    console.log(`confirmed remove: ${this.session}`);
