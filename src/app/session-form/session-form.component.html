@@ -4,27 +4,27 @@
     </header>
   <ul class="list-group">
       <li class="list-group-item row">
-          <label for="calories" class="col-xs-2">Calories</label>
+          <label for="calories" class="col-xs-3">Calories</label>
           <input type="number" min="0" name="calories" id="calories"
           [(ngModel)]="session.calories" placeholder="Calories">
       </li>
       <li class="list-group-item row">
-          <label for="fc" class="col-xs-2">FC</label>
+          <label for="fc" class="col-xs-3">FC</label>
           <input type="number" name="fc" id="fc" min="30"
           [(ngModel)]="session.fc" placeholder="heart rate">
       </li>
       <li class="list-group-item row">
-        <label for="date_done" class="col-xs-2">Date</label>
+        <label for="date_done" class="col-xs-3">Date</label>
         <input type="date" name="date_done" id="date_done"
         [(ngModel)]="session.date_done" placeholder="date done">
       </li>
       <li class="list-group-item row">
-        <label for="duration" class="col-xs-2">Duration</label>
+        <label for="duration" class="col-xs-3">Duration</label>
         <input type="number" min="0" name="duration" id="duration" 
         [(ngModel)]="session.duration" placeholder="duration">
       </li>
       <li class="list-group-item row">
-        <label for="temperature" class="col-xs-2">Temperature</label>
+        <label for="temperature" class="col-xs-3">Temperature</label>
         <input type="number" min="0" name="temperature" id="temperature" 
         [(ngModel)]="session.temperature" placeholder="eg. 88">
       </li>
