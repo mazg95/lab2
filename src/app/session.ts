@@ -4,4 +4,5 @@ export class Session {
     duration: string;
     calories: number;
     fc: number;
+    temperature: number;
   }

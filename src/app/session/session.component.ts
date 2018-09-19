@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
+import Swal from 'sweetalert2'
+
 @Component({
   selector: 'app-session',
   templateUrl: './session.component.html',
@@ -14,11 +16,8 @@ export class SessionComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  removeItem(){
-    this.confirmedDelete();
-  }
-  confirmedDelete() {
+  
+  deleteSession() {
    this.delete.emit(this.session);
    console.log(`confirmed remove: ${this.session}`);
   }

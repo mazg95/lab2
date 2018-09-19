@@ -53,8 +53,11 @@ export class SessionService {
 
   removeSession(session_id:number): boolean{
     let sessions = this.storage.get('sessions')|| [];
-    let index = sessions.indexOf(s => s.id == session_id);
-    if(!index){
+    console.log(`Servicio ${session_id}`);
+    console.log(sessions);
+    let index = sessions.indexOf(s => (s.id === session_id));
+    console.log(index);
+    if(index<0){
       return false;
     }
     sessions.splice(index,1);

@@ -23,6 +23,11 @@
         <input type="number" min="0" name="duration" id="duration" 
         [(ngModel)]="session.duration" placeholder="duration">
       </li>
+      <li class="list-group-item row">
+        <label for="temperature" class="col-xs-2">Temperature</label>
+        <input type="number" min="0" name="temperature" id="temperature" 
+        [(ngModel)]="session.temperature" placeholder="eg. 88">
+      </li>
   </ul>
   <button class="btn btn-default" (click)="saveSession()">Save</button>
   <button class="btn btn-danger" (click)="goBack()">Go back</button>

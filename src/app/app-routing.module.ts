@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'meals', component: MealListComponent},
   { path: 'detail/:id', component: SessionFormComponent },
   { path: 'detail', component: SessionFormComponent },
-  { path: '', redirectTo: '/metrics', pathMatch: 'full' }
+  { path: '', redirectTo: '/sessions', pathMatch: 'full' }
 ];
 
 @NgModule({
