@@ -5,3 +5,20 @@ input, button, .list-group-item{
 input{
     margin:auto;
 }
+
+li.row{
+ margin-right: 0;
+ margin-left: 0;
+}
+
+.flat-btn{
+    color: whitesmoke;
+    margin: 0 10px 0 0;
+    padding: 10px;
+    border: solid 2px whitesmoke;
+}
+
+.flat-btn:hover{
+    background-color: whitesmoke;
+    color: black;
+}

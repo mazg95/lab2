@@ -2,33 +2,33 @@
     <header>
         <h2>{{!isNew?'Edit Session': 'Add Sesion'}}</h2>
     </header>
-  <ul class="list-group">
-      <li class="list-group-item row">
-          <label for="calories" class="col-xs-3">Calories</label>
-          <input type="number" min="0" name="calories" id="calories"
-          [(ngModel)]="session.calories" placeholder="Calories">
-      </li>
-      <li class="list-group-item row">
-          <label for="fc" class="col-xs-3">FC</label>
-          <input type="number" name="fc" id="fc" min="30"
-          [(ngModel)]="session.fc" placeholder="heart rate">
-      </li>
-      <li class="list-group-item row">
+    <ul class="list-group">
+        <li class="list-group-item row">
+            <label for="calories" class="col-xs-3">Calories</label>
+            <input type="number" min="0" name="calories" id="calories"
+            [(ngModel)]="session.calories" placeholder="eg. 250">
+        </li>
+        <li class="list-group-item row">
+            <label for="fc" class="col-xs-3">FC</label>
+            <input type="number" name="fc" id="fc" min="30"
+            [(ngModel)]="session.fc" placeholder="eg. 85">
+        </li>
+        <li class="list-group-item row">
         <label for="date_done" class="col-xs-3">Date</label>
         <input type="date" name="date_done" id="date_done"
-        [(ngModel)]="session.date_done" placeholder="date done">
-      </li>
-      <li class="list-group-item row">
+        [(ngModel)]="session.date_done" placeholder="dd/mm/yyyy">
+        </li>
+        <li class="list-group-item row">
         <label for="duration" class="col-xs-3">Duration</label>
         <input type="number" min="0" name="duration" id="duration" 
-        [(ngModel)]="session.duration" placeholder="duration">
-      </li>
-      <li class="list-group-item row">
+        [(ngModel)]="session.duration" placeholder="eg. 150">
+        </li>
+        <li class="list-group-item row">
         <label for="temperature" class="col-xs-3">Temperature</label>
         <input type="number" min="0" name="temperature" id="temperature" 
         [(ngModel)]="session.temperature" placeholder="eg. 88">
-      </li>
-  </ul>
-  <button class="btn btn-default" (click)="saveSession()">Save</button>
-  <button class="btn btn-danger" (click)="goBack()">Go back</button>
+        </li>
+    </ul>
+  <a class="flat-btn" (click)="saveSession()">Save</a>
+  <a class="flat-btn" (click)="goBack()">Go back</a>
 </div>

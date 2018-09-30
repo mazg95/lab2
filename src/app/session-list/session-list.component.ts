@@ -45,13 +45,7 @@ export class SessionListComponent implements OnInit {
           }
         // For more information about handling dismissals please visit
         // https://sweetalert2.github.io/#handling-dismissals
-        } else if (result.dismiss === Swal.DismissReason.cancel) {
-          Swal(
-            'Cancelled',
-            'Your data session is safe :)',
-            'error'
-          );
-        }
+        } 
       });
   }
 
