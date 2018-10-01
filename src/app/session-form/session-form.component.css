@@ -11,14 +11,6 @@ li.row{
  margin-left: 0;
 }
 
-.flat-btn{
-    color: whitesmoke;
-    margin: 0 10px 0 0;
-    padding: 10px;
-    border: solid 2px whitesmoke;
-}
-
-.flat-btn:hover{
-    background-color: whitesmoke;
-    color: black;
+h2{
+    color:white;
 }
