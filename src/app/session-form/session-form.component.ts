@@ -26,11 +26,13 @@ export class SessionFormComponent implements OnInit {
   }
 
   getSession(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     if(id){
       this.isNew = false;
       this.sessionService.getSession(id)
-      .subscribe(s => this.session = s);
+      .then(res => res.json())
+      .then(s => this.session = s)
+      .catch(error => console.error(error));
     }
     else{
       this.session = new Session();
@@ -38,13 +40,27 @@ export class SessionFormComponent implements OnInit {
   }
 
   saveSession(){
+    let self = this;
     if(this.isNew){
-      this.sessionService.newSession(this.session);
+      this.sessionService.newSession(this.session)
+      .then(res => res.status == 201)
+      .then(res => {
+        if(res){
+          self.goBack();
+        }
+      })
+      .catch(error => console.error(error))
     }
     else {
-      this.sessionService.saveSession(this.session);
+      this.sessionService.saveSession(this.session)
+      .then(res => res.status == 204)
+      .then(res => {
+        if(res){
+          self.goBack();
+        }
+      })
+      .catch(error => console.error(error))
     }
-    this.goBack();
   }
  
   goBack(): void {

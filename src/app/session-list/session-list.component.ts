@@ -19,7 +19,7 @@ export class SessionListComponent implements OnInit {
 
 
   onSessionDelete(session){
-    console.log(session.id);
+    console.log(session._id);
     var self = this;
       Swal({
         title: 'Are you sure?',
@@ -30,21 +30,16 @@ export class SessionListComponent implements OnInit {
         cancelButtonText: 'No, keep it'
       }).then((result) => {
         if (result.value) {
-          let val = self.sessionService.removeSession(session.id);
-          if(val){
-            self.getSessions();
-            Swal(
-            'Deleted!',
-            'Your data session has been deleted.',
-            'success'
-          );}
-          else{
-            Swal('Not Deleted!',
-            'Retry Later.',
-            'error');
-          }
-        // For more information about handling dismissals please visit
-        // https://sweetalert2.github.io/#handling-dismissals
+          self.sessionService.removeSession(session._id)
+          .then(res => res.status == 204)
+          .then(val =>{self.getSessions()
+           Swal(
+          'Deleted!',
+          'Your data session has been deleted.',
+          'success')})
+          .catch(err => Swal('Not Deleted!',
+          'Retry Later.',
+          'error'))
         } 
       });
   }
@@ -52,7 +47,10 @@ export class SessionListComponent implements OnInit {
   sessions: Session[];
 
   getSessions(): void {
+    let self = this;
     this.sessionService.getSessions()
-      .subscribe(sessions => this.sessions = sessions);
+      .then(res=>res.json())
+      .then(sessions => self.sessions = sessions)
+      .catch(err => alert('Ha Ocurrido un error'));
   }
 }
