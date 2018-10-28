@@ -27,11 +27,14 @@ export class SessionFormComponent implements OnInit {
 
   getSession(): void {
     const id = this.route.snapshot.paramMap.get('id');
+    let self = this;
     if(id){
       this.isNew = false;
       this.sessionService.getSession(id)
-      .then(res => res.json())
-      .then(s => this.session = s)
+      .then(res=>res.json())
+      .then(s => {self.session = s[0];
+      console.log(self.session);
+      })
       .catch(error => console.error(error));
     }
     else{

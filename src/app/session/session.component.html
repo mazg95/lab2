@@ -1,9 +1,9 @@
 <article class="col-xs-12 col-sm-12 col-md-6 col-lg-4">
-  <h3>Session #{{session.id}}</h3>
+  <h3>Session / {{session.date_done}}</h3>
   <div class="row session">
     <h4 class="list-group-item-heading col-xs-8">Calories {{session.calories}} / FC: {{session.fc}}</h4>
     <div class="tools col-xs-4">
-        <a routerLink="/detail/{{session.id}}">
+        <a routerLink="/detail/{{session._id}}">
             <span class="glyphicon glyphicon-edit"></span>
           </a>
         <a>

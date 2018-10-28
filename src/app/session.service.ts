@@ -21,11 +21,15 @@ export class SessionService {
   }
 
   newSession(session:Session) {
-    return fetch(this.base_url, { method: 'POST', mode: 'cors'})
+    return fetch(this.base_url, { method: 'POST',
+     mode: 'cors', body: JSON.stringify(session),
+     headers: {'Content-Type': 'application/json'}
+    })
   }
 
   saveSession(session:Session){
-    return fetch(this.base_url + session._id, { method: 'PUT', mode: 'cors'})
+    return fetch(this.base_url + session._id, { method: 'PUT', mode: 'cors', body: JSON.stringify(session),
+    headers: {'Content-Type': 'application/json'}})
   }
 
   removeSession(session_id:number){
