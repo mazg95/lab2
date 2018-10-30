@@ -2,7 +2,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/src/assets/imgs/background.jpg');
+    background-image: url('./assets/imgs/background.jpg');
     font-family: Raleway, Helvetica, Arial, sans-serif;
     font-size: 1.8rem;
     line-height: 160%;
